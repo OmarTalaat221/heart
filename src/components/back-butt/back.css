@@ -1,0 +1,13 @@
+.back-buttonn {
+    margin: 10px 5px;
+    background-color: var(--green-1);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

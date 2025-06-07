@@ -1,0 +1,90 @@
+.second-page {
+    color: #000;
+}
+
+.second-page .second-container {
+
+    margin: auto;
+    width: 90%;
+
+    padding: 64px 24px 0;
+}
+
+.second-page .second-container .title-second-page-session h2 {
+    line-height: 1.2;
+    font-size: 2.125rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: -0.2px;
+}
+
+
+
+.second-container .subject-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.second-container .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.third-page .third-container .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+
+@media (min-width:1200px) {
+    .second-page .second-container {
+        width: 1200px;
+        margin: auto;
+    }
+
+
+}
+
+@media (max-width:1200px) {
+    .second-container .subject-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .second-container .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .third-page .third-container .card-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width:768px) {
+    .second-container .subject-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .second-container .course-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .third-page .third-container .card-grid {
+
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
+
+
+@media (max-width:568px) {
+    .second-container .subject-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

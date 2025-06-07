@@ -1,0 +1,40 @@
+.subject-grid .col-1-subject {
+    display: inline-block;
+    background-color: var(--green-1);
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding: 16px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+.subject-grid .subject-header {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.subject-grid .subject-header::after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+
+
+.col-1-subject:hover .subject-header {
+    padding-right: 15px;
+}
+
+.col-1-subject:hover .subject-header::after {
+    opacity: 1;
+    right: 0;
+}

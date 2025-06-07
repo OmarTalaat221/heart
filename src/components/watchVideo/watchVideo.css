@@ -1,0 +1,18 @@
+.video-div {
+    margin: auto;
+    width: 80%;
+}
+
+.video-butt {
+    padding: 12px 18px;
+    color: var(--green-1);
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    border: 2px solid;
+    margin: 15px 0 30px;
+
+}

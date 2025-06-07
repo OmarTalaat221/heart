@@ -1,0 +1,145 @@
+.third-page {
+    color: #000;
+}
+
+.third-page .third-container {
+
+
+
+    padding: 30px 0;
+}
+
+.third-page .third-container .header h2 {
+    line-height: 1.2;
+    font-size: 2.125rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: -0.2px;
+}
+
+.card-grid .col-grid {
+    position: relative;
+    color: #2e2d31;
+    background: var(--green-3);
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+
+    justify-content: center;
+    min-height: 340px;
+
+}
+
+.card-grid .col-grid .div-img-1 {
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.card-grid .col-grid .div-img-2 {
+    border-radius: 50%;
+    width: 110px;
+    background: var(--green-3);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card-grid .col-grid img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+}
+
+
+
+.card-grid .col-grid .card-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-top-left-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 16px;
+
+}
+
+
+.card-container::before {
+    content: '';
+    position: absolute;
+    top: -47px;
+    right: -45px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-147deg);
+    border-radius: 50%;
+    box-shadow: inset 53px 5px #fff;
+
+}
+
+
+
+.card-grid .name {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-grid .subject {
+    display: flex;
+
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: rgb(245, 245, 252);
+    width: fit-content;
+}
+
+
+.card-grid .subject p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: none;
+    color: inherit;
+    white-space: nowrap;
+
+}
+
+
+.card-grid .col-grid .btn-more {
+    background-color: var(--green-3);
+
+    color: #fff;
+    font-size: 16px;
+    padding: 13px 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.card-grid .col-grid .btn-more:hover {
+    background-color: var(--green-1);
+}
+
+.card-grid .col-grid .btn-more:active {
+    background-color: var(--green-1);
+}
