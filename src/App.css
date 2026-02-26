@@ -1401,3 +1401,484 @@ body {
     padding: 25px 15px;
   }
 }
+
+/* ============ GOODBYE SCREEN STYLES ============ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.goodbye-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============ RAIN EFFECT ============ */
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -20px;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(transparent, rgba(174, 194, 224, 0.3));
+  animation: rain linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* ============ FALLING HEARTS ============ */
+.falling-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.falling-heart {
+  position: absolute;
+  top: -50px;
+  animation: fallDown linear forwards;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) scale(0.8);
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ============ GOODBYE CONTAINER ============ */
+.goodbye-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  max-width: 650px;
+  width: 100%;
+}
+
+/* ============ BROKEN HEART ICON ============ */
+.broken-heart-icon {
+  font-size: 70px;
+  animation: heartBreak 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(139, 69, 69, 0.5));
+}
+
+@keyframes heartBreak {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) drop-shadow(0 0 20px rgba(139, 69, 69, 0.5));
+  }
+  25% {
+    transform: scale(1.05) rotate(-3deg);
+  }
+  50% {
+    transform: scale(0.95) rotate(0deg);
+    filter: brightness(0.6) drop-shadow(0 0 10px rgba(139, 69, 69, 0.3));
+  }
+  75% {
+    transform: scale(1.05) rotate(3deg);
+  }
+}
+
+/* ============ TITLE ============ */
+.goodbye-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #8b6969;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  animation: fadeInDown 1.5s ease-out;
+  text-shadow: 0 0 30px rgba(139, 105, 105, 0.3);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ LETTER CONTAINER ============ */
+.letter-container {
+  width: 100%;
+  perspective: 1000px;
+}
+
+.letter-paper {
+  background: linear-gradient(145deg, #252538, #1a1a28);
+  border-radius: 20px;
+  padding: 40px 45px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.6),
+    0 0 120px rgba(139, 69, 69, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(139, 69, 69, 0.15);
+  position: relative;
+  overflow: hidden;
+  animation: paperFloat 6s ease-in-out infinite;
+}
+
+@keyframes paperFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(1deg);
+  }
+}
+
+.letter-paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6b4545,
+    #8b5555,
+    #6b4545,
+    transparent
+  );
+}
+
+.letter-paper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(139, 69, 69, 0.2);
+}
+
+.letter-header span {
+  font-size: 1.4rem;
+  color: #a07070;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+.letter-content {
+  min-height: 320px;
+}
+
+.letter-text {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #d0c0c0;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: #a07070;
+  animation: cursorBlink 0.8s infinite;
+  margin-left: 2px;
+  font-weight: 100;
+}
+
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.letter-footer {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(139, 69, 69, 0.2);
+  animation: fadeInUp 1s ease-out;
+}
+
+.signature {
+  text-align: right;
+}
+
+.signature span {
+  font-size: 1.1rem;
+  color: #907070;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ============ FINAL SECTION ============ */
+.final-section {
+  text-align: center;
+  animation: fadeInUp 1.5s ease-out;
+  margin-top: 20px;
+}
+
+.pulse-broken-heart {
+  font-size: 90px;
+  animation: pulseSad 2s ease-in-out infinite;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 30px rgba(139, 69, 69, 0.4));
+}
+
+@keyframes pulseSad {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: grayscale(0) drop-shadow(0 0 30px rgba(139, 69, 69, 0.4));
+  }
+  50% {
+    transform: scale(0.9);
+    filter: grayscale(0.5) drop-shadow(0 0 15px rgba(139, 69, 69, 0.2));
+  }
+}
+
+.final-words {
+  font-size: 1.2rem;
+  color: #908080;
+  font-style: italic;
+  margin: 20px 0;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+.fading-memories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.fading-memories span {
+  font-size: 28px;
+  animation: fadeInOut 3s ease-in-out infinite;
+  filter: grayscale(0.3);
+}
+
+.fading-memories span:nth-child(1) {
+  animation-delay: 0s;
+}
+.fading-memories span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.fading-memories span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.fading-memories span:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.fading-memories span:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.7) translateY(5px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ============ GOODBYE STATS ============ */
+.goodbye-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  border: 1px solid rgba(139, 69, 69, 0.1);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  color: #8b6969;
+  font-weight: 300;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #707080;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ BOTTOM QUOTE ============ */
+.bottom-quote {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.bottom-quote p {
+  color: #505060;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .goodbye-title {
+    font-size: 2rem;
+    letter-spacing: 5px;
+  }
+
+  .letter-paper {
+    padding: 25px 20px;
+  }
+
+  .letter-text {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .letter-header span {
+    font-size: 1.1rem;
+  }
+
+  .pulse-broken-heart {
+    font-size: 60px;
+  }
+
+  .goodbye-stats {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .final-words {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .goodbye-container {
+    gap: 15px;
+  }
+
+  .broken-heart-icon {
+    font-size: 50px;
+  }
+
+  .goodbye-title {
+    font-size: 1.5rem;
+  }
+
+  .letter-paper {
+    padding: 20px 15px;
+  }
+
+  .letter-content {
+    min-height: 250px;
+  }
+}
