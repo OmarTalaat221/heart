@@ -69,9 +69,9 @@ function App() {
         left: Math.random() * 100,
         animationDuration: 5 + Math.random() * 5,
         size: 15 + Math.random() * 20,
-        emoji: ["💔", "🖤", "😢", "💧", "🥀", "☁️"][
-          Math.floor(Math.random() * 6)
-        ],
+        // emoji: ["💔", "🖤", "😢", "💧", "🥀", "☁️"][
+        //   Math.floor(Math.random() * 6)
+        // ],
         opacity: 0.3 + Math.random() * 0.4,
       };
 
